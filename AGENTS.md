@@ -1,7 +1,7 @@
 # Agent guide
 
 App: **flappy-nrca** at https://flappy-nrca.vibekit.bot
-Repo: template/game | Port: 4232
+Repo: 609NFT/flappy-nrca | Port: 4232
 
 ## NEVER (breaks the product)
 - **NEVER point the user at localhost / `npm start`** — only **https://flappy-nrca.vibekit.bot**. They have no terminal. "Download this?" → open the URL on a phone → Share → **Add to Home Screen**.

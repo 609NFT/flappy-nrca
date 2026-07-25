@@ -1,5 +1,5 @@
 # STATUS.md — Live Infrastructure (auto-updated)
-_Last updated: 2026-07-25T13:02:28.940Z_
+_Last updated: 2026-07-25T15:29:45.236Z_
 
 ## Container
 - **Name**: vk-flappy-nrca
@@ -12,13 +12,13 @@ _Last updated: 2026-07-25T13:02:28.940Z_
 ## App
 - **Name**: flappy-nrca
 - **Subdomain**: flappy-nrca.vibekit.bot
-- **DB Status**: deploying
+- **DB Status**: running
 - **Health Failures**: 0
-- **Last Healthy**: never
+- **Last Healthy**: 2026-07-25T15:29:36.643+00:00
 
 
 ## Host
-- **Disk**: 23G used / 30G total (74% full)
+- **Disk**: 23G used / 30G total (75% full)
 
 ## Recent Logs (last 10 lines)
 ```

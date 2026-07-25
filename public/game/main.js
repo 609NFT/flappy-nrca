@@ -27,6 +27,7 @@ let clouds;
 let topScores = [];
 let deadReason = '';
 let submitted = false;
+let overReadyAt = 0;
 
 function resetWorld() {
   bird = { x: 128, y: 300, vy: 0, r: 18, rot: 0 };
@@ -283,11 +284,14 @@ E.scene('play', {
 E.scene('over', {
   enter() {
     submitted = false;
+    overReadyAt = performance.now() + 300;
   },
   async onTap(x, y) {
+    if (performance.now() < overReadyAt) return;
     if (!submitted && y > 426 && y < 480) {
+      const raw = prompt('Name for the leaderboard? (3-12 chars)');
+      if (raw === null) return;
       submitted = true;
-      const raw = prompt('Name for the leaderboard? (3-12 chars)') || 'PILOT';
       const name = raw.replace(/[^a-z0-9 _-]/gi, '').trim().slice(0, 12) || 'PILOT';
       const res = await E.leaderboard.submit(name, score);
       if (res && res.rank) alert(`Rank #${res.rank} saved.`);
@@ -301,6 +305,7 @@ E.scene('over', {
     E.go('menu');
   },
   onKey(k) {
+    if (performance.now() < overReadyAt) return;
     if (k === 'action' || k === 'up') {
       E.go('play');
       flap();
